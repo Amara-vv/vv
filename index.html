@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六月宝宝</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{
+            background:#000;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:flex-start;
+            min-height:100vh;
+            padding:20px;
+        }
+        h1{
+            color:#fff;
+            font-size:2rem;
+            margin-bottom:20px;
+            animation:fadeIn .8s ease-out;        /* 让标题淡入 */
+        }
+        .video-container{
+            width:min(90vmin,400px);   /* 维持 9:16 竖屏 */
+            aspect-ratio:9/16;
+            max-height:711px;
+            border-radius:12px;
+            overflow:hidden;
+            animation:slideUp .8s ease-out;      /* 让视频浮上来 */
+        }
+        video{
+            width:100%;
+            height:100%;
+            object-fit:contain;
+            display:block;
+        }
+        @keyframes fadeIn{
+            from{opacity:0;transform:translateY(-20px)}
+            to{opacity:1;transform:translateY(0)}
+        }
+        @keyframes slideUp{
+            from{opacity:0;transform:translateY(30px)}
+            to{opacity:1;transform:translateY(0)}
+        }
+        /* 响应式微调 */
+        @media(max-width:480px){
+            h1{font-size:1.5rem;margin-bottom:1rem}
+            body{padding:10px}
+        }
+    </style>
+</head>
+<body>
+    <h1>六月宝宝</h1>
+
+    <div class="video-container">
+        <video controls autoplay loop>
+            <source src="liu.mp4" type="video/mp4">
+            浏览器不支持视频。
+        </video>
+    </div>
+
+</body>
+</html>
